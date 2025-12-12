@@ -40,7 +40,7 @@ This mockup showcases:
 
 ## Viewing the Mockup
 
-Visit the live demo: [GitHub Pages URL will be added after deployment]
+Visit the live demo: **https://landeanalysis-commits.github.io/cesar-tender-platform-mockup/**
 
 ## Project Context
 
