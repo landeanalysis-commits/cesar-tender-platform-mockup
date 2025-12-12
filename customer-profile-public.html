@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="John Doe's customer profile - View active tasks, reviews from providers, and task history">
+    <title>John Doe - Customer Profile | Tender Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Scandinavian Design System */
+        :root {
+            --color-primary: #2563EB;
+            --color-secondary: #1E40AF;
+            --color-accent: #3B82F6;
+            --color-text: #1E293B;
+            --color-text-light: #64748B;
+            --color-background: #F8FAFC;
+            --color-surface: #FFFFFF;
+            --color-border: #E2E8F0;
+            --spacing-unit: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        .nav-link {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        /* Profile Photo */
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background: #DBEAFE;
+            color: #1E40AF;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .badge-success {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: var(--color-secondary);
+            transform: translateY(-1px);
+        }
+
+        .button-secondary {
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .button-secondary:hover {
+            background: #EFF6FF;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Card */
+        .stat-card {
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        /* Task Card */
+        .task-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .task-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Review Card */
+        .review-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .reviewer-photo {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #64748B;
+            font-weight: 600;
+        }
+
+        /* Reliability Badges */
+        .reliability-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #F0FDF4;
+            border-radius: 8px;
+            border: 1px solid #86EFAC;
+        }
+
+        .check-icon {
+            color: #16A34A;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: #1E293B;
+            color: white;
+            margin-top: 80px;
+        }
+
+        footer a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container">
+            <nav class="flex items-center justify-between py-4">
+                <div class="flex items-center gap-8">
+                    <a href="/" class="text-2xl font-bold text-blue-600">Tender</a>
+                    <div class="hidden md:flex gap-6">
+                        <a href="/for-customers.html" class="nav-link">For Customers</a>
+                        <a href="/for-providers.html" class="nav-link">For Providers</a>
+                        <a href="/how-it-works.html" class="nav-link">How It Works</a>
+                        <a href="/pricing.html" class="nav-link">Pricing</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="/login.html" class="nav-link">Log In</a>
+                    <a href="/signup.html" class="button button-primary">Sign Up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Header -->
+    <section class="bg-white border-b border-gray-200 py-12">
+        <div class="container">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <!-- Profile Photo -->
+                <div class="profile-photo">JD</div>
+
+                <!-- Profile Info -->
+                <div class="flex-1">
+                    <div class="flex flex-col md:flex-row md:items-center gap-4 mb-4">
+                        <h1 class="text-4xl font-bold">John Doe</h1>
+                        <span class="badge">Verified Customer</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-6 mb-6 text-gray-600">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">⭐</span>
+                            <span class="font-semibold text-gray-900">4.8</span>
+                            <span>(23 reviews from providers)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">📍</span>
+                            <span>Oslo, Norway</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl">📅</span>
+                            <span>Member since January 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/messages.html" class="button button-primary">Message</a>
+                        <a href="#active-tasks" class="button button-secondary">View Active Tasks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="stat-card">
+                    <span class="stat-value">18</span>
+                    <span class="stat-label">Tasks Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">€2,500</span>
+                    <span class="stat-label">Total Spent</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">4.8/5.0</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">&lt; 3h</span>
+                    <span class="stat-label">Response Time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-12">
+        <div class="container">
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">About</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    I'm a homeowner in Oslo looking for reliable service providers for various home improvement and maintenance projects. I value clear communication, quality workmanship, and professionalism. I prefer to work with providers who are responsive and can provide detailed quotes. I typically have multiple projects throughout the year, ranging from small repairs to larger renovation tasks. I always pay promptly upon completion and appreciate providers who respect timelines and keep me updated on progress.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reliability Badges -->
+    <section class="py-12">
+        <div class="container">
+            <h2 class="text-2xl font-bold mb-6">Reliability</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="reliability-badge">
+                    <span class="check-icon text-xl">✓</span>
+                    <span class="font-medium text-gray-900">Verified Identity</span>
+                </div>
+                <div class="reliability-badge">
+                    <span class="check-icon text-xl">✓</span>
+                    <span class="font-medium text-gray-900">Prompt Payment</span>
+                </div>
+                <div class="reliability-badge">
+                    <span class="check-icon text-xl">✓</span>
+                    <span class="font-medium text-gray-900">Clear Communication</span>
+                </div>
+                <div class="reliability-badge">
+                    <span class="check-icon text-xl">✓</span>
+                    <span class="font-medium text-gray-900">Repeat Customer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Active Tasks -->
+    <section id="active-tasks" class="py-12 bg-gray-50">
+        <div class="container">
+            <h2 class="text-2xl font-bold mb-6">Active Tasks</h2>
+            <div class="space-y-4">
+                <!-- Task Card 1 -->
+                <div class="task-card">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="badge">Plumbing</span>
+                            <span class="text-sm text-gray-500">Posted 2 days ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Kitchen Sink Repair and Faucet Replacement</h3>
+                        <div class="flex flex-wrap gap-4 text-gray-600 text-sm">
+                            <div class="flex items-center gap-1">
+                                <span>💰</span>
+                                <span>Budget: €200-300</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span>📍</span>
+                                <span>Oslo, Norway</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span>📝</span>
+                                <span>5 proposals</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/task-details.html" class="button button-primary ml-4">View Task</a>
+                </div>
+
+                <!-- Task Card 2 -->
+                <div class="task-card">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="badge">Electrical</span>
+                            <span class="text-sm text-gray-500">Posted 5 days ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Install Additional Power Outlets in Home Office</h3>
+                        <div class="flex flex-wrap gap-4 text-gray-600 text-sm">
+                            <div class="flex items-center gap-1">
+                                <span>💰</span>
+                                <span>Budget: €400-600</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span>📍</span>
+                                <span>Oslo, Norway</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span>📝</span>
+                                <span>8 proposals</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/task-details.html" class="button button-primary ml-4">View Task</a>
+                </div>
+
+                <!-- Task Card 3 -->
+                <div class="task-card">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="badge">Painting</span>
+                            <span class="text-sm text-gray-500">Posted 1 week ago</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Interior Wall Painting - Living Room and Hallway</h3>
+                        <div class="flex flex-wrap gap-4 text-gray-600 text-sm">
+                            <div class="flex items-center gap-1">
+                                <span>💰</span>
+                                <span>Budget: €800-1200</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span>📍</span>
+                                <span>Oslo, Norway</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <span>📝</span>
+                                <span>12 proposals</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/task-details.html" class="button button-primary ml-4">View Task</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews from Providers -->
+    <section class="py-12">
+        <div class="container">
+            <h2 class="text-2xl font-bold mb-6">Reviews from Providers</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="reviewer-photo">MP</div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="font-semibold text-lg">Maria Petersen</h3>
+                                <span class="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Electrician - 2 weeks ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Excellent customer to work with! John provided clear instructions about what needed to be done, was available to answer questions, and made the payment immediately after completion. The workspace was well-prepared and he was respectful of our time. Would definitely work with him again on future projects."
+                    </p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="reviewer-photo">LH</div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="font-semibold text-lg">Lars Hansen</h3>
+                                <span class="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Plumber - 1 month ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Great customer! Very professional and easy to communicate with. He knew exactly what he wanted and gave me all the details upfront. Payment was prompt and he even left a nice review for my services. Highly recommend working with John. A+ customer!"
+                    </p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="reviewer-photo">SK</div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="font-semibold text-lg">Sofia Karlsson</h3>
+                                <span class="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Painter - 2 months ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "John was a pleasure to work with. He was flexible with scheduling, communicated clearly about his expectations, and the job site was always clean and ready for us. He paid promptly and gave helpful feedback. Would absolutely work with him again!"
+                    </p>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="reviewer-photo">TN</div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="font-semibold text-lg">Thomas Nielsen</h3>
+                                <span class="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Carpenter - 3 months ago</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        "One of the best customers I've worked with on this platform. John was clear about the scope of work, provided accurate measurements, and was available when needed but never micromanaged. Payment was instant upon completion. Looking forward to working with him again!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Task History -->
+    <section class="py-12 bg-gray-50">
+        <div class="container">
+            <h2 class="text-2xl font-bold mb-6">Task History</h2>
+            <div class="card">
+                <div class="space-y-4">
+                    <!-- History Item 1 -->
+                    <div class="flex items-center justify-between py-4 border-b border-gray-200 last:border-b-0">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">Bathroom Tile Replacement</h3>
+                            <div class="flex items-center gap-4 text-sm text-gray-600">
+                                <span class="badge">Tiling</span>
+                                <span>Completed: November 2024</span>
+                            </div>
+                        </div>
+                        <span class="badge-success">Completed</span>
+                    </div>
+
+                    <!-- History Item 2 -->
+                    <div class="flex items-center justify-between py-4 border-b border-gray-200 last:border-b-0">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">Garden Fence Installation</h3>
+                            <div class="flex items-center gap-4 text-sm text-gray-600">
+                                <span class="badge">Carpentry</span>
+                                <span>Completed: October 2024</span>
+                            </div>
+                        </div>
+                        <span class="badge-success">Completed</span>
+                    </div>
+
+                    <!-- History Item 3 -->
+                    <div class="flex items-center justify-between py-4 border-b border-gray-200 last:border-b-0">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">HVAC System Maintenance</h3>
+                            <div class="flex items-center gap-4 text-sm text-gray-600">
+                                <span class="badge">HVAC</span>
+                                <span>Completed: September 2024</span>
+                            </div>
+                        </div>
+                        <span class="badge-success">Completed</span>
+                    </div>
+
+                    <!-- History Item 4 -->
+                    <div class="flex items-center justify-between py-4 border-b border-gray-200 last:border-b-0">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">Roof Leak Repair</h3>
+                            <div class="flex items-center gap-4 text-sm text-gray-600">
+                                <span class="badge">Roofing</span>
+                                <span>Completed: August 2024</span>
+                            </div>
+                        </div>
+                        <span class="badge-success">Completed</span>
+                    </div>
+
+                    <!-- History Item 5 -->
+                    <div class="flex items-center justify-between py-4 border-b border-gray-200 last:border-b-0">
+                        <div class="flex-1">
+                            <h3 class="font-semibold text-lg mb-1">Kitchen Cabinet Refacing</h3>
+                            <div class="flex items-center gap-4 text-sm text-gray-600">
+                                <span class="badge">Carpentry</span>
+                                <span>Completed: July 2024</span>
+                            </div>
+                        </div>
+                        <span class="badge-success">Completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Tender</h3>
+                    <p class="text-gray-400">Connecting customers with trusted service providers across Norway.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">For Customers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/post-task.html">Post a Task</a></li>
+                        <li><a href="/browse-providers.html">Browse Providers</a></li>
+                        <li><a href="/how-it-works.html">How It Works</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">For Providers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/browse-tasks.html">Browse Tasks</a></li>
+                        <li><a href="/pricing.html">Pricing</a></li>
+                        <li><a href="/provider-signup.html">Become a Provider</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Tender Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Providers - TenderMatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#60A5FA',
+                        'gray-50': '#F9FAFB',
+                        'gray-900': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-light text-gray-900">TenderMatch</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="for-customers.html" class="text-gray-600 hover:text-gray-900">For Customers</a>
+                    <a href="for-providers.html" class="text-gray-900 font-medium">For Providers</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-gray-900">How it Works</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-600 hover:text-gray-900">Login</a>
+                    <a href="register.html" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-500 transition">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-light text-gray-900 mb-6">
+                    Grow Your Business.<br>Find More Clients.
+                </h1>
+                <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                    Connect with customers who need your services. Browse tasks, submit offers, and build your professional reputation on Europe's fastest-growing platform.
+                </p>
+                <a href="register.html" class="bg-primary text-white px-8 py-4 rounded text-lg hover:bg-blue-500 transition inline-block">
+                    Start Finding Work Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits for Providers Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-light text-center mb-16">Why Professionals Choose TenderMatch</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">💼</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Find More Work</h3>
+                    <p class="text-gray-600">Access thousands of tasks posted daily by customers actively looking for professionals like you.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">💳</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Get Paid Securely</h3>
+                    <p class="text-gray-600">Secure payment processing with escrow protection. Get paid on time, every time, through our trusted platform.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">⭐</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Build Reputation</h3>
+                    <p class="text-gray-600">Collect verified reviews and ratings. Showcase your best work and build trust with potential clients.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">📅</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Flexible Schedule</h3>
+                    <p class="text-gray-600">Work on your own terms. Choose the tasks that fit your schedule and expertise level.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">No Commission Fees</h3>
+                    <p class="text-gray-600">Simple monthly subscription. Keep 100% of what you earn from your work - no hidden commission fees.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🌍</span>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">International Opportunities</h3>
+                    <p class="text-gray-600">Connect with customers across Europe. Expand your business beyond your local market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Gallery Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-light mb-4">Meet Our Customers</h2>
+                <p class="text-xl text-gray-600">Thousands of customers ready to hire professionals like you</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Featured Customer Card -->
+                <div class="bg-white rounded-lg border-2 border-primary p-6 hover:shadow-lg transition relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full font-medium">Reliable Customer</span>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mb-4"></div>
+                        <h3 class="text-xl font-medium mb-2">John Doe</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center text-yellow-500">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <span class="text-sm font-medium">4.8</span>
+                            <span class="text-sm text-gray-600">(23 reviews from providers)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            <div>📍 Oslo, Norway</div>
+                            <div>✅ 18 tasks completed</div>
+                            <div>💰 €2,500 spent on platform</div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4">Regular customer with consistent payment history. Professional communication. Quick to respond and approve work.</p>
+                        <div class="flex gap-2 w-full">
+                            <a href="customer-profile-public.html" class="flex-1 text-center px-4 py-2 border-2 border-primary text-primary rounded hover:bg-primary hover:text-white transition text-sm font-medium">
+                                View Profile
+                            </a>
+                            <a href="messages.html" class="flex-1 text-center px-4 py-2 bg-primary text-white rounded hover:bg-blue-500 transition text-sm font-medium">
+                                Message
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Card 2 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mb-4"></div>
+                        <h3 class="text-xl font-medium mb-2">Anna Larsen</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center text-yellow-500">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <span class="text-sm font-medium">4.9</span>
+                            <span class="text-sm text-gray-600">(15 reviews)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            <div>📍 Stockholm, Sweden</div>
+                            <div>✅ 12 tasks completed</div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4">Homeowner seeking various renovation services. Clear communication and fair pricing expectations.</p>
+                    </div>
+                </div>
+
+                <!-- Customer Card 3 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mb-4"></div>
+                        <h3 class="text-xl font-medium mb-2">Marcus Berg</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center text-yellow-500">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <span class="text-sm font-medium">4.7</span>
+                            <span class="text-sm text-gray-600">(28 reviews)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            <div>📍 Copenhagen, Denmark</div>
+                            <div>✅ 25 tasks completed</div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4">Business owner with regular maintenance needs. Multiple properties requiring ongoing services.</p>
+                    </div>
+                </div>
+
+                <!-- Customer Card 4 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mb-4"></div>
+                        <h3 class="text-xl font-medium mb-2">Sofia Virtanen</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center text-yellow-500">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <span class="text-sm font-medium">5.0</span>
+                            <span class="text-sm text-gray-600">(10 reviews)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            <div>📍 Helsinki, Finland</div>
+                            <div>✅ 10 tasks completed</div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4">New homeowner seeking reliable professionals for home improvement projects.</p>
+                    </div>
+                </div>
+
+                <!-- Customer Card 5 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mb-4"></div>
+                        <h3 class="text-xl font-medium mb-2">Jan van der Berg</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center text-yellow-500">
+                                <span>⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <span class="text-sm font-medium">4.8</span>
+                            <span class="text-sm text-gray-600">(19 reviews)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            <div>📍 Amsterdam, Netherlands</div>
+                            <div>✅ 20 tasks completed</div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4">Apartment landlord requiring cleaning and maintenance services for multiple properties.</p>
+                    </div>
+                </div>
+
+                <!-- Customer Card 6 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-24 h-24 bg-gray-300 rounded-full mb-4"></div>
+                        <h3 class="text-xl font-medium mb-2">Katrina Mueller</h3>
+                        <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center text-yellow-500">
+                                <span>⭐⭐⭐⭐☆</span>
+                            </div>
+                            <span class="text-sm font-medium">4.6</span>
+                            <span class="text-sm text-gray-600">(14 reviews)</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            <div>📍 Berlin, Germany</div>
+                            <div>✅ 15 tasks completed</div>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4">Small business owner seeking various professional services for office and retail space.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="register.html" class="text-primary hover:underline text-lg font-medium">Browse all 5,000+ active customers →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Tasks Preview Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-light mb-4">Available Tasks Right Now</h2>
+                <p class="text-xl text-gray-600">Browse tasks and submit your offers to start earning</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Task Card 1 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium">Plumbing</span>
+                        <span class="text-sm text-gray-600">Posted 2h ago</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Kitchen Sink Repair Needed</h3>
+                    <p class="text-sm text-gray-700 mb-4">Leaking kitchen sink needs professional repair. Located in central Oslo. Prefer work to be done this week.</p>
+                    <div class="text-sm text-gray-600 mb-4 space-y-1">
+                        <div>📍 Oslo, Norway</div>
+                        <div>💰 Budget: €100 - €150</div>
+                        <div>📅 Needed by: This week</div>
+                        <div>👥 3 offers received</div>
+                    </div>
+                    <button class="w-full text-center px-4 py-2 bg-primary text-white rounded hover:bg-blue-500 transition text-sm font-medium">
+                        Submit Offer
+                    </button>
+                </div>
+
+                <!-- Task Card 2 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full font-medium">Cleaning</span>
+                        <span class="text-sm text-gray-600">Posted 5h ago</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Deep Clean 2-Bedroom Apartment</h3>
+                    <p class="text-sm text-gray-700 mb-4">Moving out cleaning for 65m² apartment. All rooms, kitchen, and bathroom. High standards required.</p>
+                    <div class="text-sm text-gray-600 mb-4 space-y-1">
+                        <div>📍 Stockholm, Sweden</div>
+                        <div>💰 Budget: €200 - €250</div>
+                        <div>📅 Needed by: Next Monday</div>
+                        <div>👥 5 offers received</div>
+                    </div>
+                    <button class="w-full text-center px-4 py-2 bg-primary text-white rounded hover:bg-blue-500 transition text-sm font-medium">
+                        Submit Offer
+                    </button>
+                </div>
+
+                <!-- Task Card 3 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full font-medium">Electrical</span>
+                        <span class="text-sm text-gray-600">Posted 1d ago</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Install New Light Fixtures</h3>
+                    <p class="text-sm text-gray-700 mb-4">Need licensed electrician to install 3 ceiling light fixtures in living room and bedrooms.</p>
+                    <div class="text-sm text-gray-600 mb-4 space-y-1">
+                        <div>📍 Copenhagen, Denmark</div>
+                        <div>💰 Budget: €300 - €400</div>
+                        <div>📅 Needed by: Within 2 weeks</div>
+                        <div>👥 7 offers received</div>
+                    </div>
+                    <button class="w-full text-center px-4 py-2 bg-primary text-white rounded hover:bg-blue-500 transition text-sm font-medium">
+                        Submit Offer
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="register.html" class="bg-primary text-white px-8 py-3 rounded text-lg hover:bg-blue-500 transition inline-block">
+                    Browse All Available Tasks
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription/Pricing Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-light mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600">No commission fees. Keep 100% of what you earn.</p>
+            </div>
+
+            <div class="bg-white rounded-lg border-2 border-primary p-8 shadow-lg">
+                <div class="text-center mb-6">
+                    <div class="text-5xl font-light text-gray-900 mb-2">€29<span class="text-2xl text-gray-600">/month</span></div>
+                    <p class="text-lg text-gray-600">Professional Subscription</p>
+                </div>
+
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <span class="text-primary text-xl flex-shrink-0">✓</span>
+                        <span class="text-gray-700">Unlimited job applications and offers</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-primary text-xl flex-shrink-0">✓</span>
+                        <span class="text-gray-700">Direct messaging with customers</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-primary text-xl flex-shrink-0">✓</span>
+                        <span class="text-gray-700">Professional profile with portfolio showcase</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-primary text-xl flex-shrink-0">✓</span>
+                        <span class="text-gray-700">Verified reviews and rating system</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-primary text-xl flex-shrink-0">✓</span>
+                        <span class="text-gray-700">Secure payment processing</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-primary text-xl flex-shrink-0">✓</span>
+                        <span class="text-gray-700">Priority customer support</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-primary text-xl flex-shrink-0">✓</span>
+                        <span class="text-gray-700"><strong>No commission on earnings</strong></span>
+                    </li>
+                </ul>
+
+                <div class="text-center">
+                    <a href="register.html" class="bg-primary text-white px-8 py-3 rounded text-lg hover:bg-blue-500 transition inline-block w-full md:w-auto">
+                        Start Your Free Trial
+                    </a>
+                    <p class="text-sm text-gray-600 mt-3">14-day free trial. Cancel anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Feature Showcase -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-light mb-6">Chat Directly with Customers</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Our built-in messaging system lets you communicate with customers in real-time. Discuss project details, clarify requirements, share quotes, and build relationships—all within the platform.
+                    </p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <span class="text-gray-700">Instant notifications for new messages and tasks</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <span class="text-gray-700">Share photos, quotes, and project proposals</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <span class="text-gray-700">Full conversation history for reference</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary text-xl">✓</span>
+                            <span class="text-gray-700">Mobile app for on-the-go communication</span>
+                        </li>
+                    </ul>
+                    <a href="messages.html" class="text-primary hover:underline font-medium">See messaging interface →</a>
+                </div>
+                <div class="bg-white rounded-lg border border-gray-200 p-6 shadow-lg">
+                    <div class="bg-gray-100 rounded-lg p-4 mb-3">
+                        <div class="flex items-start gap-3 mb-3">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="bg-white rounded-lg p-3 shadow-sm">
+                                    <p class="text-sm">Hi! I need my kitchen sink repaired. When are you available?</p>
+                                </div>
+                                <span class="text-xs text-gray-500 mt-1 block">John Doe - 5 min ago</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 flex-row-reverse">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1 flex flex-col items-end">
+                                <div class="bg-primary text-white rounded-lg p-3 shadow-sm">
+                                    <p class="text-sm">I can come tomorrow afternoon. I'll bring all necessary tools. My rate is €60/hour.</p>
+                                </div>
+                                <span class="text-xs text-gray-500 mt-1 block">Just now</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="Type your message..." class="flex-1 px-3 py-2 border border-gray-300 rounded text-sm" disabled>
+                        <button class="px-4 py-2 bg-primary text-white rounded text-sm" disabled>Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works for Providers -->
+    <section id="how-it-works" class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-light text-center mb-16">How It Works for Providers</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-medium">1</div>
+                    <h3 class="text-xl font-medium mb-2">Create Your Profile</h3>
+                    <p class="text-gray-600">Set up your professional profile with your skills, experience, rates, and portfolio.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-medium">2</div>
+                    <h3 class="text-xl font-medium mb-2">Browse Tasks</h3>
+                    <p class="text-gray-600">Search and filter tasks that match your skills and availability in your area.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-medium">3</div>
+                    <h3 class="text-xl font-medium mb-2">Submit Offers</h3>
+                    <p class="text-gray-600">Send personalized offers with your price, timeline, and why you're the right choice.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-medium">4</div>
+                    <h3 class="text-xl font-medium mb-2">Get Hired & Earn</h3>
+                    <p class="text-gray-600">Complete the work, get paid securely, and collect reviews to grow your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-light mb-6">Ready to Grow Your Business?</h2>
+            <p class="text-xl text-gray-600 mb-8">Join thousands of successful professionals earning on TenderMatch</p>
+            <a href="register.html" class="bg-primary text-white px-8 py-4 rounded text-lg hover:bg-blue-500 transition inline-block">
+                Start Finding Work Today
+            </a>
+            <p class="text-sm text-gray-600 mt-4">14-day free trial. No credit card required.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-xl font-light mb-4">TenderMatch</div>
+                    <p class="text-gray-600 text-sm">Connecting tasks with trusted professionals worldwide.</p>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">For Customers</h4>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="for-customers.html" class="hover:text-gray-900">How it Works</a></li>
+                        <li><a href="register.html" class="hover:text-gray-900">Post a Task</a></li>
+                        <li><a href="for-customers.html#how-it-works" class="hover:text-gray-900">Browse Providers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">For Providers</h4>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="for-providers.html" class="hover:text-gray-900">Find Work</a></li>
+                        <li><a href="for-providers.html#pricing" class="hover:text-gray-900">Pricing</a></li>
+                        <li><a href="register.html" class="hover:text-gray-900">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="index.html" class="hover:text-gray-900">About Us</a></li>
+                        <li><a href="index.html" class="hover:text-gray-900">Contact</a></li>
+                        <li><a href="index.html" class="hover:text-gray-900">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2025 TenderMatch. All rights reserved. Static mockup for client presentation.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
