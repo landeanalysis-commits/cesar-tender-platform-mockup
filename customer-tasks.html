@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks - TenderMatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#60A5FA',
+                        'gray-50': '#F9FAFB',
+                        'gray-900': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-light text-gray-900">TenderMatch</a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="customer-dashboard.html" class="text-gray-600 hover:text-gray-900">Dashboard</a>
+                    <a href="customer-tasks.html" class="text-gray-900 font-medium">My Tasks</a>
+                    <a href="messages.html" class="text-gray-600 hover:text-gray-900">Messages</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="post-task.html" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-500 transition">Post a Task</a>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
+                        <span class="text-sm">John Doe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-light text-gray-900 mb-2">My Tasks</h1>
+                <p class="text-gray-600">Manage all your posted tasks</p>
+            </div>
+            <a href="post-task.html" class="bg-primary text-white px-6 py-3 rounded hover:bg-blue-500 transition">
+                + New Task
+            </a>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="mb-6 border-b border-gray-200">
+            <div class="flex space-x-8">
+                <button class="pb-3 px-1 border-b-2 border-primary text-primary font-medium">
+                    All Tasks (12)
+                </button>
+                <button class="pb-3 px-1 border-b-2 border-transparent text-gray-600 hover:text-gray-900">
+                    Active (5)
+                </button>
+                <button class="pb-3 px-1 border-b-2 border-transparent text-gray-600 hover:text-gray-900">
+                    In Progress (2)
+                </button>
+                <button class="pb-3 px-1 border-b-2 border-transparent text-gray-600 hover:text-gray-900">
+                    Completed (5)
+                </button>
+            </div>
+        </div>
+
+        <!-- Tasks Grid -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Task Card 1 -->
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full font-medium">Active</span>
+                    <span class="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full font-medium">Urgent</span>
+                </div>
+                <h3 class="text-xl font-medium mb-2">Lorem ipsum dolor sit amet</h3>
+                <p class="text-gray-600 mb-4">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore...</p>
+                <div class="space-y-2 text-sm text-gray-600 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span>📍</span>
+                        <span>Oslo, Norway</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>📅</span>
+                        <span>Posted 2 days ago</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>💼</span>
+                        <span>Plumbing</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <span class="text-primary font-medium">12 new offers</span>
+                    <a href="view-offers.html" class="text-primary hover:underline">View Offers →</a>
+                </div>
+            </div>
+
+            <!-- Task Card 2 -->
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full font-medium">In Progress</span>
+                </div>
+                <h3 class="text-xl font-medium mb-2">Ut enim ad minim veniam</h3>
+                <p class="text-gray-600 mb-4">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo...</p>
+                <div class="space-y-2 text-sm text-gray-600 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span>📍</span>
+                        <span>Stockholm, Sweden</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>📅</span>
+                        <span>Started 5 days ago</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>💼</span>
+                        <span>Carpentry</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <span class="text-gray-600">Provider: John Smith</span>
+                    <a href="messages.html" class="text-primary hover:underline">Message →</a>
+                </div>
+            </div>
+
+            <!-- Task Card 3 -->
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full font-medium">Waiting</span>
+                </div>
+                <h3 class="text-xl font-medium mb-2">Duis aute irure dolor</h3>
+                <p class="text-gray-600 mb-4">In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla...</p>
+                <div class="space-y-2 text-sm text-gray-600 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span>📍</span>
+                        <span>Copenhagen, Denmark</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>📅</span>
+                        <span>Posted 1 week ago</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>💼</span>
+                        <span>Electrical Work</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <span class="text-primary font-medium">7 offers</span>
+                    <a href="view-offers.html" class="text-primary hover:underline">View Offers →</a>
+                </div>
+            </div>
+
+            <!-- Task Card 4 -->
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-xs rounded-full font-medium">Completed</span>
+                </div>
+                <h3 class="text-xl font-medium mb-2">Excepteur sint occaecat</h3>
+                <p class="text-gray-600 mb-4">Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim...</p>
+                <div class="space-y-2 text-sm text-gray-600 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span>📍</span>
+                        <span>Helsinki, Finland</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>📅</span>
+                        <span>Completed 3 weeks ago</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>💼</span>
+                        <span>Painting</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <div class="flex items-center text-yellow-500">
+                        <span>⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <a href="#" class="text-primary hover:underline">View Details →</a>
+                </div>
+            </div>
+
+            <!-- Task Card 5 -->
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full font-medium">Active</span>
+                </div>
+                <h3 class="text-xl font-medium mb-2">Sed ut perspiciatis unde</h3>
+                <p class="text-gray-600 mb-4">Omnis iste natus error sit voluptatem accusantium doloremque laudantium...</p>
+                <div class="space-y-2 text-sm text-gray-600 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span>📍</span>
+                        <span>Amsterdam, Netherlands</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>📅</span>
+                        <span>Posted 4 days ago</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>💼</span>
+                        <span>Moving Services</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <span class="text-primary font-medium">3 new offers</span>
+                    <a href="view-offers.html" class="text-primary hover:underline">View Offers →</a>
+                </div>
+            </div>
+
+            <!-- Task Card 6 -->
+            <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full font-medium">Active</span>
+                </div>
+                <h3 class="text-xl font-medium mb-2">Nemo enim ipsam voluptatem</h3>
+                <p class="text-gray-600 mb-4">Quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur...</p>
+                <div class="space-y-2 text-sm text-gray-600 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span>📍</span>
+                        <span>Berlin, Germany</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>📅</span>
+                        <span>Posted yesterday</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span>💼</span>
+                        <span>IT Services</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <span class="text-gray-600">No offers yet</span>
+                    <a href="#" class="text-primary hover:underline">Edit Task →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

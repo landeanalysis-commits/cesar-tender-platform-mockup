@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenderMatch - International Task Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#60A5FA',
+                        'gray-50': '#F9FAFB',
+                        'gray-900': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-light text-gray-900">TenderMatch</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-900 font-medium">Home</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-gray-900">How it Works</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">For Customers</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">For Providers</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="login.html" class="text-gray-600 hover:text-gray-900">Login</a>
+                    <a href="register.html" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-500 transition">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-light text-gray-900 mb-6">
+                    Connect Tasks with<br>Trusted Professionals
+                </h1>
+                <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="register.html" class="bg-primary text-white px-8 py-4 rounded text-lg hover:bg-blue-500 transition">
+                        Post a Task
+                    </a>
+                    <a href="register.html" class="bg-white text-gray-900 px-8 py-4 rounded text-lg border-2 border-gray-300 hover:border-gray-400 transition">
+                        Find Work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how-it-works" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-light text-center mb-16">How It Works</h2>
+
+            <!-- For Customers -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-light mb-8 text-center text-primary">For Customers</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-primary">1</span>
+                        </div>
+                        <h4 class="text-xl font-medium mb-2">Post Your Task</h4>
+                        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-primary">2</span>
+                        </div>
+                        <h4 class="text-xl font-medium mb-2">Receive Offers</h4>
+                        <p class="text-gray-600">Suspendisse potenti. Nullam euismod, nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-primary">3</span>
+                        </div>
+                        <h4 class="text-xl font-medium mb-2">Choose & Complete</h4>
+                        <p class="text-gray-600">Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- For Providers -->
+            <div>
+                <h3 class="text-2xl font-light mb-8 text-center text-primary">For Service Providers</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-primary">1</span>
+                        </div>
+                        <h4 class="text-xl font-medium mb-2">Create Profile</h4>
+                        <p class="text-gray-600">Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-primary">2</span>
+                        </div>
+                        <h4 class="text-xl font-medium mb-2">Browse Tasks</h4>
+                        <p class="text-gray-600">Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gray-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-2xl text-primary">3</span>
+                        </div>
+                        <h4 class="text-xl font-medium mb-2">Submit Offers</h4>
+                        <p class="text-gray-600">Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-light text-center mb-16">Why Choose TenderMatch</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Verified Professionals</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Secure Communication</h3>
+                    <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium mb-3">International Reach</h3>
+                    <p class="text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Transparent Pricing</h3>
+                    <p class="text-gray-600">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium mb-3">Quality Reviews</h3>
+                    <p class="text-gray-600">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-medium mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-light mb-6">Ready to Get Started?</h2>
+            <p class="text-xl text-gray-600 mb-8">Join thousands of customers and professionals connecting on TenderMatch</p>
+            <a href="register.html" class="bg-primary text-white px-8 py-4 rounded text-lg hover:bg-blue-500 transition inline-block">
+                Create Your Account
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-xl font-light mb-4">TenderMatch</div>
+                    <p class="text-gray-600 text-sm">Connecting tasks with trusted professionals worldwide.</p>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">For Customers</h4>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="#" class="hover:text-gray-900">How it Works</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Post a Task</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Browse Providers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">For Providers</h4>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="#" class="hover:text-gray-900">Find Work</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Pricing</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="#" class="hover:text-gray-900">About Us</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Contact</a></li>
+                        <li><a href="#" class="hover:text-gray-900">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2025 TenderMatch. All rights reserved. Static mockup for client presentation.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

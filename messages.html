@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - TenderMatch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#60A5FA',
+                        'gray-50': '#F9FAFB',
+                        'gray-900': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-light text-gray-900">TenderMatch</a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="customer-dashboard.html" class="text-gray-600 hover:text-gray-900">Dashboard</a>
+                    <a href="customer-tasks.html" class="text-gray-600 hover:text-gray-900">My Tasks</a>
+                    <a href="messages.html" class="text-gray-900 font-medium">Messages</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
+                        <span class="text-sm">John Doe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden" style="height: calc(100vh - 180px);">
+            <div class="grid grid-cols-12 h-full">
+
+                <!-- Conversations List -->
+                <div class="col-span-12 md:col-span-4 border-r border-gray-200 flex flex-col">
+
+                    <!-- Search -->
+                    <div class="p-4 border-b border-gray-200">
+                        <h1 class="text-2xl font-light text-gray-900 mb-4">Messages</h1>
+                        <input type="text" placeholder="Search conversations..." class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                    </div>
+
+                    <!-- Conversations -->
+                    <div class="flex-1 overflow-y-auto">
+                        <!-- Conversation 1 - Active -->
+                        <div class="p-4 border-b border-gray-200 bg-blue-50 hover:bg-blue-100 cursor-pointer">
+                            <div class="flex items-start gap-3">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0"></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h3 class="font-medium truncate">Sarah Johnson</h3>
+                                        <span class="text-xs text-gray-600">2:45 PM</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">Lorem ipsum dolor sit amet...</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-xs text-gray-500">Kitchen sink repair</span>
+                                        <span class="px-2 py-0.5 bg-primary text-white text-xs rounded-full">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation 2 -->
+                        <div class="p-4 border-b border-gray-200 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-start gap-3">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0"></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h3 class="font-medium truncate">Mike Anderson</h3>
+                                        <span class="text-xs text-gray-600">Yesterday</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">Sed do eiusmod tempor incididunt...</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-xs text-gray-500">Bathroom renovation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation 3 -->
+                        <div class="p-4 border-b border-gray-200 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-start gap-3">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0"></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h3 class="font-medium truncate">Emma Wilson</h3>
+                                        <span class="text-xs text-gray-600">2 days ago</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">Ut enim ad minim veniam...</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-xs text-gray-500">Pipe installation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation 4 -->
+                        <div class="p-4 border-b border-gray-200 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-start gap-3">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0"></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h3 class="font-medium truncate">David Lee</h3>
+                                        <span class="text-xs text-gray-600">3 days ago</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">Quis nostrud exercitation...</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-xs text-gray-500">Leak repair</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversation 5 -->
+                        <div class="p-4 border-b border-gray-200 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-start gap-3">
+                                <div class="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0"></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h3 class="font-medium truncate">Lisa Chen</h3>
+                                        <span class="text-xs text-gray-600">1 week ago</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 truncate">Duis aute irure dolor...</p>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-xs text-gray-500">Water heater</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Chat Area -->
+                <div class="col-span-12 md:col-span-8 flex flex-col">
+
+                    <!-- Chat Header -->
+                    <div class="p-4 border-b border-gray-200 bg-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-gray-300 rounded-full"></div>
+                                <div>
+                                    <h2 class="font-medium">Sarah Johnson</h2>
+                                    <p class="text-xs text-gray-600">Professional Plumber • Oslo</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button class="px-4 py-2 text-sm border border-gray-300 rounded hover:border-gray-400 transition">
+                                    View Profile
+                                </button>
+                                <button class="px-4 py-2 text-sm border border-gray-300 rounded hover:border-gray-400 transition">
+                                    View Task
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Messages -->
+                    <div class="flex-1 overflow-y-auto p-6 space-y-4">
+
+                        <!-- Date Separator -->
+                        <div class="flex items-center justify-center">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">Today</span>
+                        </div>
+
+                        <!-- Received Message -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="bg-gray-100 rounded-lg p-4 inline-block max-w-lg">
+                                    <p class="text-sm">Hello! I'm interested in your task about the kitchen sink repair. I have 5 years of experience with similar projects.</p>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">10:30 AM</div>
+                            </div>
+                        </div>
+
+                        <!-- Received Message -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="bg-gray-100 rounded-lg p-4 inline-block max-w-lg">
+                                    <p class="text-sm">I can provide a free inspection and give you an accurate quote. When would be a good time for you?</p>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">10:31 AM</div>
+                            </div>
+                        </div>
+
+                        <!-- Sent Message -->
+                        <div class="flex items-start gap-3 flex-row-reverse">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1 flex flex-col items-end">
+                                <div class="bg-primary text-white rounded-lg p-4 inline-block max-w-lg">
+                                    <p class="text-sm">Hi Sarah! Thanks for reaching out. I saw your profile and your reviews look great!</p>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">2:15 PM</div>
+                            </div>
+                        </div>
+
+                        <!-- Sent Message -->
+                        <div class="flex items-start gap-3 flex-row-reverse">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1 flex flex-col items-end">
+                                <div class="bg-primary text-white rounded-lg p-4 inline-block max-w-lg">
+                                    <p class="text-sm">Would tomorrow afternoon work for the inspection? I'm available after 2 PM.</p>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">2:16 PM</div>
+                            </div>
+                        </div>
+
+                        <!-- Received Message -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="bg-gray-100 rounded-lg p-4 inline-block max-w-lg">
+                                    <p class="text-sm">Perfect! Tomorrow at 2:30 PM works well for me. I'll bring my tools just in case we can start right away if it's a simple fix.</p>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">2:45 PM</div>
+                            </div>
+                        </div>
+
+                        <!-- Typing Indicator -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="bg-gray-100 rounded-lg p-4 inline-block">
+                                    <div class="flex gap-1">
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Message Input -->
+                    <div class="p-4 border-t border-gray-200 bg-white">
+                        <div class="flex items-end gap-3">
+                            <button class="p-2 text-gray-400 hover:text-gray-600 transition">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path>
+                                </svg>
+                            </button>
+                            <textarea rows="1" placeholder="Type your message..." class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"></textarea>
+                            <button class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-blue-500 transition font-medium">
+                                Send
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Press Enter to send, Shift+Enter for new line</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
